@@ -5,13 +5,15 @@ Using a RAG workflow ensures that there is a lot less guessing on the AI's side 
 Heres how the workflow sequence looks like:
 ~The workflow uses the Google Drive API to download my uploaded finance reports (in .pdf format, but can realistically be run with really any text based format) into the workflow
 ~The downloaded file is then broken down into chunks and is stored in a vector Database (I use Supabase as my database)
-~I have my Google Gemini API connected and my Telegram Bot connected 
-~Now, whenever I send a prompt through my Telegram Bot, it sends my prompt to Google Gemini and the AI uses ONLY the data stored in the vector Database to respond to my request
+~I have my OpenAI API connected (does the embeddings and a seperate node answers chats)
+~Now, whenever I send a prompt through my n8n chat, it sends my prompt to my OpenAI chat model and the AI uses ONLY the data stored in the vector Database to respond to my request
 
 Tools used:
 ~n8n
 ~Supabase
 ~Google Drive
-~Google Gemini
-~Telegram
+~OpenAI API
 ~Original Finance report from Micheal Burry's substack
+
+note:
+couldnt pay for openai credits, so havent tested this, will come back to this later
